@@ -1,12 +1,181 @@
-
 <div align="center">
 
+# 🚀 AIHawk Job Application Agent
 
-# AIHawk: The first Jobs Applier AI Web Agent
+**An open-core job-application automation agent built with Selenium, LangChain and multiple LLM integrations.**
 
+<img alt="Languages" src="https://img.shields.io/badge/docs-English_·_فارسی_·_العربية-2563eb?style=for-the-badge">
+<img alt="Architecture" src="https://img.shields.io/badge/architecture-Mermaid-7c3aed?style=for-the-badge">
+<img alt="Organization" src="https://img.shields.io/badge/org-Barmana--BRM-0f172a?style=for-the-badge">
 
-AIHawk's core architecture remains **open source**, allowing developers to inspect and extend the codebase. However, due to copyright considerations, we have removed all third‑party provider plugins from this repository.
+[English](#english) · [فارسی](#فارسی) · [العربية](#العربية) · [Build Guide](./BUILD.md)
+
+</div>
+
+> [!IMPORTANT]
+> **Verified repository status:** Extensible automation agent; provider plugins are not included
+
+## 🧭 Architecture
+
+```mermaid
+flowchart LR
+  C[Config + resume] --> A[AIHawk]
+A --> L[LangChain adapter] --> M[LLM]
+A --> B[Selenium] --> J[Job portal]
+A --> R[Logs/artifacts]
+```
+
+---
+
+## English
+
+### 📌 Overview
+
+An open-core job-application automation agent built with Selenium, LangChain and multiple LLM integrations.
+
+This README is based on the current public source, dependency manifests, container files and runnable entry points. Implemented functionality is separated from roadmap claims, and known limitations are recorded instead of being hidden behind generic setup instructions.
+
+### ✨ Core capabilities
+
+- Browser-driven workflows
+- Resume extraction and generation
+- Multiple LLM adapters
+- Structured logging and tests
+
+### 🧱 Technology stack
+
+| Layer | Technology |
+|---|---|
+| Automation | Python, Selenium, undetected-chromedriver |
+| AI | LangChain |
+| Providers | OpenAI, Anthropic, Gemini, Hugging Face, Ollama |
+| Documents | pdfminer.six, ReportLab |
+
+### 🔄 Operating model
+
+1. Prepare the runtime and external services documented in [BUILD.md](./BUILD.md).
+2. Configure secrets in local environment files or a secret manager; never commit them.
+3. Start infrastructure and backend services before the user interface in multi-service projects.
+4. Validate health checks, migrations, model files and provider connectivity.
+5. Run tests and domain-specific validation before producing a release artifact.
+
+### 🔐 Security, quality and limitations
+
+- Provider plugins were removed
+- Automation must comply with platform terms
+
+### 🛠 Build and deployment
+
+Use **[BUILD.md](./BUILD.md)** for verified prerequisites, development commands, production build steps, tests and troubleshooting.
+
+### 📄 Attribution and license
+
+Verify the repository LICENSE and all third-party notices before redistribution or commercial use.
+
+---
+
+## فارسی
+
+### 📌 معرفی پروژه
+
+عامل خودکار درخواست شغل مبتنی بر Selenium، LangChain و چند مدل زبانی.
+
+این مستند بر اساس سورس عمومی فعلی، فایل‌های وابستگی، تنظیمات کانتینر و نقاط ورود قابل مشاهده تهیه شده است. قابلیت‌های پیاده‌سازی‌شده از موارد نقشه راه جدا شده‌اند و محدودیت‌های واقعی Build به‌صورت شفاف ثبت شده‌اند.
+
+### ✨ قابلیت‌های اصلی
+
+- فرایند مرورگرمحور
+- استخراج و تولید رزومه
+- اتصال چند مدل زبانی
+- لاگ و تست ساختاریافته
+
+### 🧱 پشته فناوری
+
+| Layer | Technology |
+|---|---|
+| Automation | Python, Selenium, undetected-chromedriver |
+| AI | LangChain |
+| Providers | OpenAI, Anthropic, Gemini, Hugging Face, Ollama |
+| Documents | pdfminer.six, ReportLab |
+
+### 🔄 روند اجرا
+
+۱. پیش‌نیازها و سرویس‌های بیرونی مندرج در [BUILD.md](./BUILD.md) را آماده کنید.  
+۲. کلیدها را فقط در فایل محیطی خارج از Git یا Secret Manager نگه دارید.  
+۳. در پروژه چندسرویسی، ابتدا دیتابیس، صف و بک‌اند و سپس رابط کاربری را اجرا کنید.  
+۴. Health Check، Migration، فایل مدل و اتصال Providerها را بررسی کنید.  
+۵. پیش از انتشار، تست فنی و اعتبارسنجی تخصصی حوزه را انجام دهید.
+
+### 🔐 امنیت و محدودیت
+
+- نسخه Runtime و Dependencyها را با Lockfile تثبیت کنید.
+- اطلاعات شخصی، فایل آپلودی، کلید API و داده واقعی نباید وارد مخزن عمومی شود.
+- ادعاهای دقت، امنیت یا آمادگی Production باید در محیط هدف دوباره ارزیابی شوند.
+- محدودیت‌های اختصاصی پروژه در بخش انگلیسی بالا و `BUILD.md` ثبت شده‌اند.
+
+### 🛠 نصب و Build
+
+راهنمای کامل و دستورات قابل کپی در **[BUILD.md](./BUILD.md)** قرار دارد.
+
+### 📄 مجوز و مالکیت
+
+فایل `LICENSE`، اعتبار توسعه‌دهندگان اصلی و مجوز کتابخانه‌های ثالث باید حفظ شود. در پروژه‌های upstream یا fork، مالکیت به سازمان بارمانا منتقل نمی‌شود.
+
+---
+
+## العربية
+
+### 📌 نظرة عامة
+
+وكيل آلي للتقديم على الوظائف باستخدام Selenium وLangChain وعدة نماذج.
+
+أُعد هذا التوثيق اعتماداً على المصدر العام الحالي وملفات التبعيات والحاويات ونقاط التشغيل المتاحة. وهو يميز بين الوظائف المنفذة وخارطة الطريق ويذكر قيود البناء الفعلية بوضوح.
+
+### ✨ القدرات الأساسية
+
+- عمليات عبر المتصفح
+- استخراج وتوليد السيرة
+- موصلات نماذج متعددة
+- سجلات واختبارات
+
+### 🧱 التقنيات
+
+| Layer | Technology |
+|---|---|
+| Automation | Python, Selenium, undetected-chromedriver |
+| AI | LangChain |
+| Providers | OpenAI, Anthropic, Gemini, Hugging Face, Ollama |
+| Documents | pdfminer.six, ReportLab |
+
+### 🔄 مسار التشغيل
+
+١. جهز المتطلبات والخدمات الخارجية الواردة في [BUILD.md](./BUILD.md).  
+٢. احتفظ بالأسرار في ملف بيئة غير متتبع أو مدير أسرار.  
+٣. شغّل قواعد البيانات والطوابير والخلفية قبل الواجهة في الأنظمة متعددة الخدمات.  
+٤. تحقق من الصحة والترحيلات وملفات النماذج واتصال المزوّدين.  
+٥. نفذ الاختبارات والتحقق المتخصص قبل إصدار نسخة للنشر.
+
+### 🔐 الأمان والقيود
+
+- ثبّت إصدارات التشغيل والتبعيات بملفات القفل.
+- لا تضع بيانات شخصية أو ملفات مرفوعة أو مفاتيح API في مستودع عام.
+- أعد التحقق من ادعاءات الدقة والأمان والجاهزية في بيئة الهدف.
+- القيود الخاصة بالمشروع موثقة في القسم الإنجليزي و`BUILD.md`.
+
+### 🛠 البناء والنشر
+
+توجد التعليمات الكاملة والأوامر القابلة للنسخ في **[BUILD.md](./BUILD.md)**.
+
+### 📄 النسب والترخيص
+
+يجب الحفاظ على `LICENSE` وحقوق المطورين الأصليين وتراخيص المكونات الخارجية. وجود نسخة أو fork لا ينقل ملكية المصدر إلى Barmana-BRM.
 
 
 
 ---
+
+<div align="center">
+
+Made documentation-ready for the public portfolio of **Barmana-BRM**
+
+</div>
